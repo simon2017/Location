@@ -1,1 +1,1 @@
-include ':app', 'lib.data'
+include ':app', 'lib.data', 'lib.data.repository'
