@@ -1,4 +1,4 @@
-package cl.trackme.il;
+package cl.trackme.data;
 
 import java.util.Date;
 
@@ -12,6 +12,8 @@ public class Location {
 	private double precision_mts;
 	private Date locationDate;
 	
+	
+	public Location(){}
 	/**
 	 * @param latitude_deg
 	 * @param longitude_deg

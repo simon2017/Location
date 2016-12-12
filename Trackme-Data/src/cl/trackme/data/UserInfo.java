@@ -1,4 +1,4 @@
-package cl.trackme.il;
+package cl.trackme.data;
 
 import java.util.List;
 
