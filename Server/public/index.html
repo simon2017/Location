@@ -1,0 +1,20 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">
+  <title>My Aplicación con Sockets</title>
+  <script src="/socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="main.js"></script>
+</head>  
+<body>  
+  <h1>My App</h1>
+  <div id="messages"></div>
+  <br/>
+  <div>
+	<input type="text" id="username" placeholder="User" value=""/>
+    <input type="password" id="password" placeholder="Contraseña" value=""/>
+    <input type="submit" value="Login!" onClick="login(this)">
+  </div>
+</body>  
+</html> 
