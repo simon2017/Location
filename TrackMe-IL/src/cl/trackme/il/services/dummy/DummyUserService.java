@@ -16,7 +16,7 @@ import cl.trackme.data.UserInfo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Path("DummyUserService")
+@Path("Dummy/UserService")
 public class DummyUserService {
 
 	public DummyUserService() {
@@ -44,13 +44,15 @@ public class DummyUserService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response reportLocation(@Context HttpHeaders headers, String data) {
 
-		String userId = headers.getRequestHeader("userId").get(0);
-
+		String userId ="";
 		ObjectMapper mapper = new ObjectMapper();
 		Location location = null;
 		String error = "";
-		try {
+		
+		try{
+			userId=headers.getRequestHeader("userId").get(0);
 			location = mapper.readValue(data, Location.class);
+			
 		} catch (Exception e) {
 			error += "\n " + e.toString();
 			e.printStackTrace();

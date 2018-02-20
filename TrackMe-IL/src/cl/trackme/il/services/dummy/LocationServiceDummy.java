@@ -33,19 +33,30 @@ public class LocationServiceDummy implements LocationService {
 	@Produces("application/json")
 	@Override
 	public String getLocationOf(@Context HttpHeaders headers, @PathParam("userId") String profile) {
-		String sessionId = headers.getRequestHeader("sessionId").get(0);
+
 		GenericResponse response = new GenericResponse();
 
-		// validar sesion
-		if (sessionController.ValidateSession(sessionId) == false) {// sesion
-																	// invalida
-			Errors error = new Errors(100, "Invalid session", "Invalid sessionID provided");
+		String sessionId = "";
+		boolean validaParam = true;
+		try {
+			sessionId = headers.getRequestHeader("sessionId").get(0);
+		} catch (Exception e) {
+			Errors error = new Errors(100, "Invalid parameter", "Invalid sessionID provided");
 			response.setError(error);
-		} else {
-			Location userLoc = Dummies.makeDummyLocation();
-			response.setData(userLoc);
+			validaParam = false;
 		}
 
+		if (validaParam) {
+			// validar sesion
+			if (sessionController.ValidateSession(sessionId) == false) {
+				// sesion invalida
+				Errors error = new Errors(101, "Invalid session", "Invalid sessionID provided");
+				response.setError(error);
+			} else {
+				Location userLoc = Dummies.makeDummyLocation();
+				response.setData(userLoc);
+			}
+		}
 		ObjectMapper mapper = new ObjectMapper();
 		String result = "";
 		try {
@@ -54,6 +65,7 @@ public class LocationServiceDummy implements LocationService {
 			result += "\n " + e.toString();
 			e.printStackTrace();
 		}
+
 		return result;
 
 	}
