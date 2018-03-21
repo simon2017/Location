@@ -50,7 +50,7 @@ public class AsyncDispatcherImpl implements Dispatcher, Runnable {
 	 */
 	private AsyncDispatcherImpl() {
 		queue = new LinkedBlockingQueue<>();
-		listeners = new HashMap<>();
+		listeners = (HashMap<Class<?>, List<Listener>>) java.util.Collections.synchronizedMap(new HashMap<Class<?>, List<Listener>>());
 		executor.execute(this);
 	}
 
