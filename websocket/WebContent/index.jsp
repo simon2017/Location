@@ -1,8 +1,8 @@
 <!doctype html>
 <html ng-app="testApp">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	<script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.2.4.js" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="main.js"></script>
   </head>
   <body>

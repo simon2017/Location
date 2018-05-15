@@ -1,7 +1,8 @@
-C:\Desarrollos\TESTs\SocketIL\src\socketil\servlet\main\DeviceWebSocketServer.java
-C:\Desarrollos\TESTs\SocketIL\src\socketil\servlet\main\Channel.java
-C:\Desarrollos\TESTs\SocketIL\src\socketil\servlet\main\ChannelsHandler.java
-C:\Desarrollos\TESTs\SocketIL\src\socketil\data\LoginMessage.java
-C:\Desarrollos\TESTs\SocketIL\src\socketil\test\WSTest.java
-C:\Desarrollos\TESTs\SocketIL\src\socketil\data\BasicMessage.java
-C:\Desarrollos\TESTs\SocketIL\src\socketil\data\ChatMessage.java
+C:\Desarrollos\GIT\Location\websocket\src\socketil\data\ChatMessage.java
+C:\Desarrollos\GIT\Location\websocket\src\socketil\data\BasicMessage.java
+C:\Desarrollos\GIT\Location\websocket\src\socketil\test\WSOutTest.java
+C:\Desarrollos\GIT\Location\websocket\src\socketil\servlet\main\DeviceWebSocketServer.java
+C:\Desarrollos\GIT\Location\websocket\src\socketil\servlet\main\Channel.java
+C:\Desarrollos\GIT\Location\websocket\src\socketil\servlet\main\ChannelsHandler.java
+C:\Desarrollos\GIT\Location\websocket\src\socketil\test\WSInTest.java
+C:\Desarrollos\GIT\Location\websocket\src\socketil\data\LoginMessage.java

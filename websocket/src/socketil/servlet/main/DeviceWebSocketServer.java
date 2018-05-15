@@ -1,6 +1,5 @@
 package socketil.servlet.main;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
@@ -8,13 +7,13 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import socketil.data.BasicMessage;
 import socketil.data.ChatMessage;
 import socketil.data.LoginMessage;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-@ApplicationScoped
 @ServerEndpoint("/javaxTest")
 public class DeviceWebSocketServer {
 

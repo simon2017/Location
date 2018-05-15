@@ -3,10 +3,8 @@ package socketil.servlet.main;
 import java.io.IOException;
 import java.util.HashMap;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.websocket.Session;
 
-@ApplicationScoped
 public class ChannelsHandler {
 	private static final HashMap<String, Channel> sessionsMap = new HashMap<String, Channel>();
 

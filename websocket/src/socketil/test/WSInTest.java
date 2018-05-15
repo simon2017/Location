@@ -2,7 +2,6 @@ package socketil.test;
 
 import java.io.StringReader;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
@@ -19,7 +18,6 @@ import lib.data.comm.messages.OutMessage;
 import lib.data.dispatcher.AsyncDispatcherImpl;
 import lib.data.dispatcher.Listener;
 
-@ApplicationScoped
 @ServerEndpoint("/tester")
 public class WSInTest implements Listener {
 	public WSInTest() {
@@ -36,11 +34,13 @@ public class WSInTest implements Listener {
 		AsyncDispatcherImpl.getInstance().addListener(this, InMessage.class);
 		AsyncDispatcherImpl.getInstance().addListener(outListener, OutMessage.class);
 
-		{
+		try {
 			JsonProvider provider = JsonProvider.provider();
 			JsonObject theMessage = provider.createObjectBuilder().add("message", "Aloja!").build();
 
 			AsyncDispatcherImpl.getInstance().dispatch(new OutMessage(session, theMessage));
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 

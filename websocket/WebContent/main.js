@@ -40,23 +40,35 @@ function sendOld() {
 	ws.send(JSON.stringify(message));
 }
 
-/*
- * var app = angular.module("testApp", []); var count = 0;
- * app.controller("InputController", function() {
- * 
- * this.cajaTexto = ""; this.myText = ""; this.count = 0;
- * 
- * this.addText = function() { this.cajaTexto = this.cajaTexto + this.myText; };
- * 
- * this.send = function() { var message = { message : this.myText };
- * this.count++; socket.send(JSON.stringify(message)); } });
- */
-/*
- * socket.onmessage = function(event) { var scope =
- * angular.element($("#inputDiv")).scope(); var message =
- * JSON.parse(event.data); scope.inputCtrl.count++; scope.inputCtrl.cajaTexto =
- * scope.inputCtrl.cajaTexto + message.message; scope.$apply(); }
- */
+var app = angular.module("testApp", []);
+var count = 0;
+app.controller("InputController", function() {
+
+	this.cajaTexto = "";
+	this.myText = "";
+	this.count = 0;
+
+	this.addText = function() {
+		this.cajaTexto = this.cajaTexto + this.myText;
+	};
+
+	this.send = function() {
+		var message = {
+			message : this.myText
+		};
+		this.count++;
+		ws.send(JSON.stringify(message));
+	}
+});
+
+//socket.onmessage = function(event) {
+//	var scope = angular.element($("#inputDiv")).scope();
+//	var message = JSON.parse(event.data);
+//	scope.inputCtrl.count++;
+//	scope.inputCtrl.cajaTexto = scope.inputCtrl.cajaTexto + message.message;
+//	scope.$apply();
+//}
+
 window.onbeforeunload = function() {
 	disconnect();
 }

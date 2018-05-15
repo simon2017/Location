@@ -1,0 +1,8 @@
+socketil\servlet\main\ChannelsHandler.class
+socketil\data\LoginMessage.class
+socketil\servlet\main\Channel.class
+socketil\test\WSOutTest.class
+socketil\data\ChatMessage.class
+socketil\servlet\main\DeviceWebSocketServer.class
+socketil\test\WSInTest.class
+socketil\data\BasicMessage.class
